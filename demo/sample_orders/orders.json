@@ -1,0 +1,22 @@
+[
+  {
+    "id": "ORD-1001",
+    "user_id": "USR-101",
+    "product_id": "PROD-001",
+    "product_name": "Wireless Bluetooth Earbuds",
+    "price": 1999,
+    "currency": "INR",
+    "status": "Delivered",
+    "delivery_date": "2026-10-04T14:15:00Z"
+  },
+  {
+    "id": "ORD-1002",
+    "user_id": "USR-102",
+    "product_id": "PROD-002",
+    "product_name": "Smart Fitness Watch",
+    "price": 3499,
+    "currency": "INR",
+    "status": "Delivered",
+    "delivery_date": "2026-10-02T11:20:00Z"
+  }
+]

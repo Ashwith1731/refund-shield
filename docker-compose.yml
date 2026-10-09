@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: refundshield_backend
+    ports:
+      - "8000:8000"
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017
+      - DATABASE_NAME=refundshield
+      - AI_MODEL_MODE=demo
+      - UPLOAD_DIR=uploads
+    depends_on:
+      - mongodb
+    volumes:
+      - ./backend/uploads:/app/uploads
+
+  frontend:
+    build: ./frontend
+    container_name: refundshield_frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+
+  mongodb:
+    image: mongo:latest
+    container_name: refundshield_mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
